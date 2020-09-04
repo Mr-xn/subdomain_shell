@@ -1,6 +1,6 @@
 # subdomain_shell
 
-### 一键调用subfinder+ksubdomain_mac+httpx 强强联合 从域名发现-->域名验证-->获取域名标题、状态码以及响应大小 最后保存结果,简化重复操作命令
+### 一键调用subfinder+ksubdomain+httpx 强强联合 从域名发现-->域名验证-->获取域名标题、状态码以及响应大小 最后保存结果,简化重复操作命令
 
 #### 因为懒 \\-_-\ 不想重复写命令，故诞生此项目
 > 暂时只写了个单域名的，后面找时间补上从文件加载多域名脚本
@@ -32,3 +32,6 @@
 > ### [subfinder-子域名查找工具,可以自行配置API接口，获取更多更全面的子域名](https://github.com/projectdiscovery/subfinder)
 > ### [httpx-快速获取域名标题、状态码、响应大小等等信息](https://github.com/projectdiscovery/httpx)
 
+### 我的其他项目 在线卑微求 star :smile:
+https://github.com/Mr-xn/Penetration_Testing_POC  
+https://github.com/Mr-xn/BurpSuite-collections
