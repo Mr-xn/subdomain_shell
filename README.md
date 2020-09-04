@@ -25,4 +25,8 @@
 > ⚠️ 请自行在使用这个脚本之前确定ksubdomain_mac列出来的你正在使用的外网网卡，比如 0 1 2 3 自信修改命令中的 -e 参数后的值
 
 ### 欢迎师傅们完善 pull
+### 相关项目 感谢他们的付出
+> ### [ksubdomain-无状态子域名爆破工具](https://github.com/knownsec/ksubdomain)
+> ### [subfinder-子域名查找工具,可以自行配置API接口，获取更多更全面的子域名](https://github.com/projectdiscovery/subfinder)
+> ### [httpx-快速获取域名标题、状态码、响应大小等等信息](https://github.com/projectdiscovery/httpx)
 
