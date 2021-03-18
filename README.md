@@ -1,6 +1,9 @@
 # subdomain_shell
 
-### 一键调用subfinder+ksubdomain+httpx 强强联合 从域名发现-->域名验证-->获取域名标题、状态码以及响应大小 最后保存结果,简化重复操作命令
+### 一键调用subfinder+ksubdomain+httpx 强强联合 
+> 从域名发现-->域名验证-->获取域名标题、状态码以及响应大小 最后保存结果,简化重复操作命令
+>
+![image](https://user-images.githubusercontent.com/18260135/111654303-98a3f380-8843-11eb-8c5e-0eade87b52a2.png)
 
 #### 因为懒 \\-_-\ 不想重复写命令，故诞生此项目
 > 暂时只写了个单域名的，后面找时间补上从文件加载多域名脚本
