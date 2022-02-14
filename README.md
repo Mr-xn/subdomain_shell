@@ -2,7 +2,7 @@
 
 ### 一键调用subfinder+ksubdomain+httpx 强强联合 
 > 从域名发现-->域名验证-->获取域名标题、状态码以及响应大小 最后保存结果,简化重复操作命令  
-> updated on 2021-03-18 22:45
+> updated on 2022-02-14 20:20
 > 
 ![image](https://user-images.githubusercontent.com/18260135/111654303-98a3f380-8843-11eb-8c5e-0eade87b52a2.png)
 
@@ -15,7 +15,7 @@
 
 ### 食用方法
 1.自行下载脚本，准备文件  
-2.下载我打包好的，下载解压开箱即用[点我下载](https://mrxn.lanzous.com/b01hngsri)  
+2.下载我打包好的，下载解压开箱即用[点我下载](https://mrxn.lanzoul.com/b01hngsri)  
 
 ## Mac 脚本测试
 ![](./img/success.png)
