@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 #./subfinder -d mrxn.net -silent|sudo ./ksubdomain -verify -skip-wild -silent|./httpx -title -content-length -status-code -o mrxn.net.txt
 # 一键调用subfinder+ksubdomain+httpx 强强联合从域名发现到域名验证到获取域名标题、状态码以及响应大小
 # author : Mrxn
@@ -7,12 +9,16 @@
 # 后期考虑加上 xray 的主动爬去来个简单的从域名到基本信息搜集的过程，可以做成定时任务
 # tested on Mac
 
+# 增加执行权限
+chmod +x httpx subfinder ksubdomain
+
 domain="$1"
 # printf "${domain} \n"
 # 创建域名文件夹
 if [ ! -d ${domain} ];then
         mkdir ${domain}
-    fi
+fi
+
 # 子域名文件
 sub_file=${domain}'/'${domain}'_sub.txt'
 # 验证结果文件
@@ -25,7 +31,7 @@ title_file=${domain}'/'${domain}'_title.txt'
 
 sub="./subfinder -d ${domain} -o ${sub_file} -silent"
 ksubdomain="sudo ./ksubdomain v -b 20M -f ${sub_file} --od -o ${sub_file_ok}"
-httpx="./httpx -t 30 -rl 60 -fr -maxr 3 -retries 3 -timeout 3 -ec -sc -cl -title -l ${sub_file_ok} -o tmp.txt &&cat tmp.txt|perl -pe 's/\e\[[0-9;]*m//g'|tee ${title_file}>>/dev/null 2>&1|rm tmp.txt"
+httpx="./httpx -t 30 -rl 60 -fr -maxr 3 -retries 3 -timeout 3 -ec -sc -cl -title -l ${sub_file_ok} -o tmp.txt &&cat tmp.txt|perl -pe 's/\e\[[0-9;]*m//g'|tee ${title_file}>>/dev/null 2>&1"
 # -proxy http://127.0.0.1:8080 
 
 # 如果子域名为空，删掉结果
@@ -36,10 +42,18 @@ if [ -s ${title_file} ];then
     printf "=>>= 共 `wc -l ${sub_file}|awk '{print $1}'` 条子域名 \n"
     printf "=>>= 共 `wc -l ${sub_file_ok}|awk '{print $1}'` 条有效子域名 \n"
     printf "=>>= 共 `wc -l ${title_file}|awk '{print $1}'` 条可正常访问域名 \n"
+    sudo chown -R `whoami` ${title_file}
 else
     printf "[+] 没有获取到域名 <<${domain}>> 的任何有效域名！ \n"
     rm -rf ${domain}
     exit 1
+fi
+}
+
+# delte tmp file
+del_tmp(){
+if [ -s tmp.txt ];then
+    rm tmp.txt
 fi
 }
 
@@ -52,6 +66,7 @@ else
     printf "[-] some error happened"
     rm -rf ${domain}
 fi
+del_tmp
 }
 
 # 脚本开始
